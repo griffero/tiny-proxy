@@ -15,7 +15,7 @@ PidFile "/var/run/tinyproxy.pid"
 
 ##HTTP Headers
 ViaProxyName "server-hostname"
-DisableViaHeader No
+DisableViaHeader Yes
 
 ##Threading
 StartServers 5
