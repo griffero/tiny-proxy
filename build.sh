@@ -23,6 +23,10 @@ echo "Compiling"
 ./autogen.sh
 make
 make install
+cd ..
+echo "ok"
+
+echo "Adding tinyproxy user"
 useradd -M -U -s /bin/false tinyproxy
 echo "ok"
 
