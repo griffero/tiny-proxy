@@ -10,6 +10,14 @@ if [ $# -eq 2 ]
     exit 1
 fi
 
+if ! lsof -i:8888
+then
+    echo "8888 is free"
+else
+    echo "8888 is occupied"
+    exit 1
+fi
+
 echo "Installing dependencies"
 apt-get install automake
 apt-get install build-essential
@@ -47,11 +55,12 @@ echo "ok"
 
 echo "Creating service"
 cp ./tinyproxy.service /etc/systemd/system/tinyproxy.service
-systemctl enable tinyproxy.service
+systemctl daemon-reload
 echo "ok"
 
 echo "Starting service"
 systemctl start tinyproxy
+systemctl enable tinyproxy.service
 echo "done"
 
 
