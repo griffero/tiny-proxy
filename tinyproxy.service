@@ -1,0 +1,13 @@
+[Unit]
+Description=Tinyproxy daemon
+Requires=network.target
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/tinyproxy.pid
+ExecStart=/usr/local/bin/tinyproxy -c '/usr/local/etc/tinyproxy/tinyproxy.conf'
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
