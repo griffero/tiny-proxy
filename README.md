@@ -1,4 +1,5 @@
 # tiny-proxy
+This deamon run a TinyProxy instance with authentication right out of the box.
 
 ## Usage
 
